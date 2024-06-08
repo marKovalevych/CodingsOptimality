@@ -1,0 +1,26 @@
+﻿<Window x:Class="CodingsOptimality.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodingsOptimality"
+        mc:Ignorable="d"
+        Title="Coding Optimality" Height="450" Width="800" ResizeMode="CanMinimize"
+        Loaded="OnLoaded" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" HorizontalAlignment="Left" Content="Select File to Start Calculation (Max size 2GB)"/>
+            <Button Grid.Row="1" Background="BlanchedAlmond" Content="Select File" Margin="3" Command="{Binding StartCommand}"/>
+            <Button Grid.Row="2" Content="Close" Width="100" Height="25" HorizontalAlignment="Right" Margin="3" Command="{Binding CloseCommand}"/>
+        </Grid>
+    </Grid>
+</Window>
