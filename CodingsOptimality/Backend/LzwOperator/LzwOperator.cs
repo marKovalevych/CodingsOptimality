@@ -46,7 +46,7 @@ namespace CodingsOptimality.Backend.LzwOperator
                 var timeStart = DateTime.Now;
                 var inputString = new string(_originalData.Select(x => (char)x).ToArray());
                 _encodedData = Lzw.Compress(inputString);
-                Size = _encodedData.Count;
+                Size = _encodedData.Count * 4;
 
                 var dec = Lzw.Decompress(_encodedData);
 
